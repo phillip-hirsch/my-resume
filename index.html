@@ -46,7 +46,21 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
-  <body>
+  <script>
+    // Hide the body until the page is fully loaded
+    const domReady = (callback) => {
+      document.readyState === 'loading'
+        ? document.addEventListener('DOMContentLoaded', callback)
+        : callback()
+    }
+
+    domReady(() => {
+      document.body.style.visibility = 'visible'
+    })
+    // End hiding body
+  </script>
+
+  <body style="visibility: hidden">
     <header class="masthead">
       <img
         src="./Phillip_Hirsch_Linkedin_Photo.jpg"
@@ -324,5 +338,13 @@
         </div>
       </div>
     </section>
+
+    <noscript
+      ><style>
+        body {
+          visibility: visible;
+        }
+      </style></noscript
+    >
   </body>
 </html>

@@ -34,12 +34,28 @@ html {
   font-size: 14px;
 }
 
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url('/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url('/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-display: swap;
+}
+
 body {
   overscroll-behavior: none;
   background: var(--color-background);
   color: var(--color-primary);
   display: grid;
-  font: 1em/1.5 Lato, sans-serif;
+  font-family: 'Lato', sans-serif; /* Ensure this matches the font-family in @font-face */
+  font-size: 1em;
+  line-height: 1.5;
   gap: 2em;
   grid-template-columns:
     [full-start] 1fr [main-start side-start] minmax(min-content, 12em)
